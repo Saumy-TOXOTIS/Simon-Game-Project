@@ -1,0 +1,101 @@
+body {
+  text-align: center;
+  background-color: #1a1a1a;
+}
+
+#level-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 3rem;
+  margin:  5%;
+  color: #FEF2BF;
+}
+
+.container {
+  display: block;
+  width: 50%;
+  margin: auto;
+
+}
+
+.btn {
+  display: inline-block;
+  margin: 25px;
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+  transition: all 0.1s ease;
+  animation: pulseGlow 2s infinite ease-in-out;
+  --hover-glow: rgba(255, 0, 0, 0.8);
+  --pulse-color: rgba(255, 0, 0, 0.8);
+}
+
+.btn.not-moving {
+  background: linear-gradient(145deg, #1a1a1a, #3c3c3c); /* Matches the body background */
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.9),
+              0 0 5px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.7);
+  animation: none;
+  transform: translateY(10px); /* More pronounced offset */
+}
+
+.btn.not-moving:hover {
+  box-shadow: 0 0 10px var(--hover-glow),
+              0 0 15px rgba(0, 0, 0, 0.5),
+              inset 0 0 15px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--hover-glow);
+}
+
+@keyframes pulseGlow {
+  0% {
+      box-shadow: 0 0 15px var(--pulse-color);
+  }
+  50% {
+      box-shadow: 0 0 25px var(--pulse-color);
+  }
+  100% {
+      box-shadow: 0 0 15px var(--pulse-color);
+  }
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px var(--hover-glow),
+              12px 12px 24px rgba(0, 0, 0, 0.8), 
+              -6px -6px 20px rgba(255, 255, 255, 0.2),
+              inset 3px 3px 7px rgba(255, 255, 255, 0.4),
+              inset -3px -3px 7px rgba(0, 0, 0, 0.3);
+  border: 3px solid var(--hover-glow);
+}
+
+.game-over {
+  background-color: red;
+  opacity: 0.8;
+}
+
+#red {
+  background: linear-gradient(145deg, #ff5e5e, #b30000);
+  --hover-glow: rgba(255, 94, 94, 0.8); /* Match the div color */
+  --pulse-color: rgba(255, 94, 94, 0.6); /* Match the div color */
+  z-index:2;
+}
+
+#green {
+  background: linear-gradient(145deg, #5effa4, #00b300);
+  --hover-glow: rgba(94, 255, 164, 0.8); /* Match the div color */
+  --pulse-color: rgba(94, 255, 164, 0.6); /* Match the div color */
+  z-index:2;
+}
+
+#blue {
+  background: linear-gradient(145deg, #5eafff, #003bff);
+  --hover-glow: rgba(94, 175, 255, 0.8); /* Match the div color */
+  --pulse-color: rgba(94, 175, 255, 0.6); /* Match the div color */
+  z-index:2;
+}
+
+#yellow {
+  background: linear-gradient(145deg, #ffea5e, #ffc300);
+  --hover-glow: rgba(255, 234, 94, 0.8); /* Match the div color */
+  --pulse-color: rgba(255, 234, 94, 0.6); /* Match the div color */
+  z-index:2;
+}
